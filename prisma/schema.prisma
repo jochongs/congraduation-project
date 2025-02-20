@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  idx             Int       @id @default(autoincrement())
+  backgroundColor String    @default("#000000") @map("background_color") @db.VarChar
+  imgPath         String    @map("img_path") @db.VarChar
+  userName        String    @map("user_name") @db.VarChar
+  expiredAt       DateTime? @map("expired_at") @db.Timestamptz(6)
+  createdAt       DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@unique([userName, expiredAt], map: "user_name_uniq")
+  @@map("user_tb")
+}
