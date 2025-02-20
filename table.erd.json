@@ -4,10 +4,10 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": -28,
-    "scrollLeft": -98,
+    "scrollTop": -20,
+    "scrollLeft": -58,
     "zoomLevel": 1,
-    "show": 431,
+    "show": 447,
     "database": 16,
     "databaseName": "",
     "canvasType": "@dineug/erd-editor/builtin-schema-sql",
@@ -48,25 +48,27 @@
           "c43HM92GBbV1kiwzfBm-Y",
           "s9GoCkN8tYwn4dsbgG2Cf",
           "h8dXO9fMtWCoV_SVLcpOG",
-          "xbLNKZobE66XVg2HxmB2k"
+          "xbLNKZobE66XVg2HxmB2k",
+          "gkxfb4_Dk-hkq_hYGRGnh"
         ],
         "seqColumnIds": [
           "Jf2JHtyzGw9y1MN-Sbec4",
           "c43HM92GBbV1kiwzfBm-Y",
           "s9GoCkN8tYwn4dsbgG2Cf",
           "h8dXO9fMtWCoV_SVLcpOG",
-          "xbLNKZobE66XVg2HxmB2k"
+          "xbLNKZobE66XVg2HxmB2k",
+          "gkxfb4_Dk-hkq_hYGRGnh"
         ],
         "ui": {
-          "x": 215,
-          "y": 197,
+          "x": 211,
+          "y": 195,
           "zIndex": 2,
           "widthName": 60,
           "widthComment": 60,
           "color": "#2196F3"
         },
         "meta": {
-          "updateAt": 1740055674752,
+          "updateAt": 1740056394663,
           "createAt": 1740055585584
         }
       }
@@ -79,7 +81,7 @@
         "comment": "",
         "dataType": "int",
         "default": "",
-        "options": 10,
+        "options": 11,
         "ui": {
           "keys": 1,
           "widthName": 60,
@@ -88,7 +90,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1740055617133,
+          "updateAt": 1740056315178,
           "createAt": 1740055593882
         }
       },
@@ -171,6 +173,26 @@
           "updateAt": 1740055661617,
           "createAt": 1740055655421
         }
+      },
+      "gkxfb4_Dk-hkq_hYGRGnh": {
+        "id": "gkxfb4_Dk-hkq_hYGRGnh",
+        "tableId": "oBTDdUpQ6ML2Yg-Ehz4kd",
+        "name": "expired_at",
+        "comment": "",
+        "dataType": "timestamp with time zone",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 62,
+          "widthComment": 60,
+          "widthDataType": 147,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1740056389910,
+          "createAt": 1740056375143
+        }
       }
     },
     "relationshipEntities": {},
@@ -196,7 +218,8 @@
         "name": 1740055604064,
         "dataType": 1740055610603,
         "options(notNull)": 1740055605504,
-        "options(primaryKey)": 1740055617131
+        "options(primaryKey)": 1740055617131,
+        "options(autoIncrement)": 1740056315175
       }
     ],
     "c43HM92GBbV1kiwzfBm-Y": [
@@ -239,6 +262,15 @@
         "name": 1740055661616,
         "dataType": 1740055656832,
         "options(notNull)": 1740055657087
+      }
+    ],
+    "gkxfb4_Dk-hkq_hYGRGnh": [
+      "tableColumnEntities",
+      1740056375140,
+      -1,
+      {
+        "name": 1740056381363,
+        "dataType": 1740056389909
       }
     ]
   }
