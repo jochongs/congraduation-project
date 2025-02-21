@@ -2,16 +2,17 @@ import { getNameFromHost } from '@/util/getNameFromHost';
 import { prisma } from '@/util/prisma';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
+import punycode from 'punycode/';
 
 export default async function Home() {
     const headerList = headers();
     const host = (await headerList).get('host');
 
-    console.log(host);
+    if (!host) {
+        redirect('/error');
+    }
 
-    const userName = getNameFromHost(host);
-
-    console.log(`사용자 이름: ${userName}`);
+    const userName = getNameFromHost(punycode.toUnicode(host));
 
     if (!userName) {
         redirect('/error');
@@ -19,7 +20,7 @@ export default async function Home() {
 
     const user = await prisma.user.findFirst({ where: { userName } });
 
-    console.log(user);
+    //console.log(user);
 
     if (!user) {
         redirect('/error');
