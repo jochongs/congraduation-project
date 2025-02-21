@@ -19,4 +19,4 @@ CREATE TABLE user_tb
 ALTER TABLE user_tb
     ADD CONSTRAINT user_name_uniq UNIQUE NULLS NOT DISTINCT (user_name, expired_at);
 
-INSERT INTO user_tb (img_path, user_name) VALUES ('/congraduation-00001.png', '테스트');
+INSERT INTO user_tb (img_path, user_name, thumbnail_img_path) VALUES ('/congraduation-00001.png', '테스트', '/thumbnail-00001.png');
