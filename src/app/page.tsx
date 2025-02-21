@@ -1,26 +1,31 @@
 import { getNameFromHost } from '@/util/getNameFromHost';
 import { prisma } from '@/util/prisma';
-import { headers } from 'next/headers';
+import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
-import punycode from 'punycode/';
 
-export default async function Home() {
-    const headerList = headers();
-    const host = (await headerList).get('host');
-
-    if (!host) {
-        redirect('/error');
-    }
-
-    const userName = getNameFromHost(punycode.toUnicode(host));
-
-    if (!userName) {
-        redirect('/error');
-    }
-
+export async function generateMetadata(): Promise<Metadata> {
+    const userName = await getNameFromHost();
     const user = await prisma.user.findFirst({ where: { userName } });
 
-    //console.log(user);
+    if (!user) {
+        redirect('/error');
+    }
+
+    return {
+        title: `${user.userName} 졸업 축하해!`,
+        description: `${user.userName}의 졸업을 진심으로 축하드려요!`,
+        openGraph: {
+            title: `${user.userName} 졸업 축하해!`,
+            siteName: '졸업축하해!',
+            images: `https://congraduation.s3.ap-northeast-2.amazonaws.com${user.imgPath}`,
+            url: `https://${user.userName}.졸업축하해.com`,
+        },
+    };
+}
+
+export default async function Home() {
+    const userName = await getNameFromHost();
+    const user = await prisma.user.findFirst({ where: { userName } });
 
     if (!user) {
         redirect('/error');
