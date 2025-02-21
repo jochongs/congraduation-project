@@ -13,7 +13,7 @@ model User {
   imgPath          String    @map("img_path") @db.VarChar
   createdAt        DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
   userName         String    @map("user_name") @db.VarChar
-  thumbnailImgPath String    @map("thumbnailImgPath") @db.VarChar
+  thumbnailImgPath String    @map("thumbnail_img_path") @db.VarChar
   expiredAt        DateTime? @map("expired_at") @db.Timestamptz(6)
 
   @@unique([userName, expiredAt], map: "user_name_uniq")
