@@ -34,10 +34,9 @@ export default async function Home() {
     return (
         <div
             className="w-full max-w-[600px] mx-auto flex items-center h-[100vh]"
-            // style={{
-            //     backgroundColor: `#${user.backgroundColor}`,
-            // }}
-        >
+            style={{
+                backgroundColor: user.backgroundColor,
+            }}>
             <img src={`https://congraduation.s3.ap-northeast-2.amazonaws.com${user.imgPath}`} alt="" />
         </div>
     );
