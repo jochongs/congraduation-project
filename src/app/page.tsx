@@ -7,6 +7,8 @@ export default async function Home() {
     const headerList = headers();
     const host = (await headerList).get('host');
 
+    console.log(host);
+
     const userName = getNameFromHost(host);
 
     console.log(`사용자 이름: ${userName}`);

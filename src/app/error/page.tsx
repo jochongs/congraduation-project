@@ -1,4 +1,11 @@
-export default function Error() {
+import { getNameFromHost } from '@/util/getNameFromHost';
+import { headers } from 'next/headers';
+
+export default async function Error() {
+    const headerList = headers();
+    const host = (await headerList).get('host');
+    const userName = getNameFromHost(host);
+
     return (
         <div className="w-full max-w-[600px] mx-auto">
             <h1
@@ -6,7 +13,7 @@ export default function Error() {
                 style={{
                     fontSize: '30px',
                 }}>
-                등록되지 않은 이름입니다.
+                {host} 등록되지 않은 이름입니다.
             </h1>
         </div>
     );
