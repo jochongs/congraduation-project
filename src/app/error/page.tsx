@@ -13,7 +13,7 @@ export default async function Error() {
                 style={{
                     fontSize: '30px',
                 }}>
-                {host} 등록되지 않은 이름입니다.
+                {host} 등록되지 않은 이름입니다.ddd
             </h1>
         </div>
     );
