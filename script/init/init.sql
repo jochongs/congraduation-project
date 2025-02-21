@@ -6,12 +6,13 @@ CREATE DATABASE con OWNER con_admin;
 
 CREATE TABLE user_tb
 (
-  idx              int                      NOT NULL GENERATED ALWAYS AS IDENTITY,
-  background_color varchar                  NOT NULL DEFAULT '#000000',
-  img_path         varchar                  NOT NULL,
-  created_at       timestamp with time zone NOT NULL DEFAULT NOW(),
-  user_name        varchar                  NOT NULL,
-  expired_at       timestamp with time zone,
+  idx                int                      NOT NULL GENERATED ALWAYS AS IDENTITY,
+  background_color   varchar                  NOT NULL DEFAULT '#000000',
+  img_path           varchar                  NOT NULL,
+  created_at         timestamp with time zone NOT NULL DEFAULT NOW(),
+  user_name          varchar                  NOT NULL,
+  thumbnail_img_path varchar                  NOT NULL,
+  expired_at         timestamp with time zone,
   PRIMARY KEY (idx)
 );
 
