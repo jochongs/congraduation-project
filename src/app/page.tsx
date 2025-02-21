@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
         openGraph: {
             title: `${user.userName} 졸업 축하해!`,
             siteName: '졸업축하해!',
-            images: `https://congraduation.s3.ap-northeast-2.amazonaws.com${user.imgPath}`,
+            images: `https://congraduation.s3.ap-northeast-2.amazonaws.com${user.thumbnailImgPath}`,
             url: `https://${user.userName}.졸업축하해.com`,
         },
     };
