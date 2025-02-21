@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "next dev --turbopack",
         "build": "next build",
-        "start": "next start",
+        "start": "next start -p 3011",
         "lint": "next lint",
         "infra:up": "docker compose -p congraduation -f script/docker-compose.yml up -d",
         "infra:down": "docker compose -p congraduation -f script/docker-compose.yml down -v"
@@ -22,6 +22,7 @@
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
+        "pm2": "^5.4.3",
         "postcss": "^8",
         "prisma": "^6.4.0",
         "tailwindcss": "^3.4.1",
