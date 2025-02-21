@@ -9,11 +9,15 @@ export default async function Home() {
 
     const userName = getNameFromHost(host);
 
+    console.log(`사용자 이름: ${userName}`);
+
     if (!userName) {
         redirect('/error');
     }
 
     const user = await prisma.user.findFirst({ where: { userName } });
+
+    console.log(user);
 
     if (!user) {
         redirect('/error');
