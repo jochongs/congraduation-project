@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
     return {
         title: `${user.userName} 졸업 축하해!`,
-        description: `${user.userName}의 졸업을 진심으로 축하드려요!`,
+        description: `단, 한 사람을 위한 사이트`,
         openGraph: {
             title: `${user.userName} 졸업 축하해!`,
             siteName: '졸업축하해!',
